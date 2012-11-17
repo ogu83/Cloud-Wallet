@@ -6,14 +6,14 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Windows;
 
 namespace CloudWallet.ViewModels
 {
     [Serializable]
+    [DataContract]
+    [KnownType(typeof(object))]
     public class WalletVM : VMBase
     {
         public WalletVM()
@@ -23,6 +23,7 @@ namespace CloudWallet.ViewModels
 
         #region Properties
         private ObservableCollection<ItemVM> _items;
+        [DataMember]
         public ObservableCollection<ItemVM> Items
         {
             get { return _items; }
@@ -53,6 +54,7 @@ namespace CloudWallet.ViewModels
 
         [NonSerialized]
         private string _searchText;
+        [IgnoreDataMember]
         public string SearchText
         {
             get { return _searchText; }
@@ -66,6 +68,7 @@ namespace CloudWallet.ViewModels
 
 
         private ItemVM _selectedItem;
+        [IgnoreDataMember]
         public ItemVM SelectedItem
         {
             get { return _selectedItem; }
@@ -84,6 +87,7 @@ namespace CloudWallet.ViewModels
 
         private const string _defaultFileName = "NewWallet";
         private string _fileName = _defaultFileName;
+        [DataMember]
         public string FileName
         {
             get { return _fileName; }
@@ -106,6 +110,7 @@ namespace CloudWallet.ViewModels
 
         private string _fullPath;
 
+        [DataMember]
         public string Password { get; set; }
 
         #endregion

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CloudWallet.ViewModels
 {
     [Serializable]
+    [DataContract]
+    [KnownType(typeof(object))]
     public class ItemVM : VMBase
     {
         public ItemVM() { }
@@ -18,6 +21,7 @@ namespace CloudWallet.ViewModels
         }
 
         private string _title;
+        [DataMember]
         public string Title
         {
             get { return _title; }
@@ -30,6 +34,7 @@ namespace CloudWallet.ViewModels
         }
 
         private string _content;
+        [DataMember]
         public string Content
         {
             get { return _content; }
