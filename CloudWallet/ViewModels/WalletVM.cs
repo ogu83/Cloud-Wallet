@@ -8,12 +8,12 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace CloudWallet.ViewModels
 {
     [Serializable]
     [DataContract]
-    [KnownType(typeof(object))]
     public class WalletVM : VMBase
     {
         public WalletVM()
@@ -24,6 +24,7 @@ namespace CloudWallet.ViewModels
         #region Properties
         private ObservableCollection<ItemVM> _items;
         [DataMember]
+        [XmlArray]
         public ObservableCollection<ItemVM> Items
         {
             get { return _items; }
@@ -54,7 +55,7 @@ namespace CloudWallet.ViewModels
 
         [NonSerialized]
         private string _searchText;
-        [IgnoreDataMember]
+        [IgnoreDataMember, XmlIgnore]
         public string SearchText
         {
             get { return _searchText; }
@@ -66,9 +67,8 @@ namespace CloudWallet.ViewModels
             }
         }
 
-
         private ItemVM _selectedItem;
-        [IgnoreDataMember]
+        [IgnoreDataMember, XmlIgnore]
         public ItemVM SelectedItem
         {
             get { return _selectedItem; }
@@ -88,6 +88,7 @@ namespace CloudWallet.ViewModels
         private const string _defaultFileName = "NewWallet";
         private string _fileName = _defaultFileName;
         [DataMember]
+        [XmlAttribute]
         public string FileName
         {
             get { return _fileName; }
@@ -111,6 +112,7 @@ namespace CloudWallet.ViewModels
         private string _fullPath;
 
         [DataMember]
+        [XmlAttribute]
         public string Password { get; set; }
 
         #endregion
@@ -135,7 +137,7 @@ namespace CloudWallet.ViewModels
         {
             try
             {
-                File.WriteAllBytes(fileName, AES.Encrypt(SerializeToBinary(), password));
+                File.WriteAllBytes(fileName, AES.Encrypt(SerializeToXML(), password));
                 ResetChanges();
                 return true;
             }
@@ -150,7 +152,7 @@ namespace CloudWallet.ViewModels
         {
             try
             {
-                return SerializeFromBinary<WalletVM>(AES.Decrypt(File.ReadAllBytes(fileName), password));
+                return DeSerializeFromXML<WalletVM>(AES.Decrypt(File.ReadAllBytes(fileName), password));
             }
             catch (Exception ex)
             {

@@ -8,15 +8,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace CloudWallet.ViewModels
 {
     [Serializable]
     [DataContract]
-    [KnownType(typeof(object))]
+    [XmlInclude(typeof(ItemVM)), XmlInclude(typeof(WalletVM))]
     public abstract class VMBase : INotifyPropertyChanged
     {
-        [field: NonSerialized]
+        [field: NonSerialized]        
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged(string info)
         {
@@ -34,6 +35,7 @@ namespace CloudWallet.ViewModels
 
         protected int _id;
         [DataMember]
+        [XmlAttribute]
         public int Id
         {
             get { return _id; }
@@ -47,6 +49,7 @@ namespace CloudWallet.ViewModels
         [NonSerialized]
         private bool _isChanged;
         [IgnoreDataMember]
+        [XmlIgnore]
         public bool IsChanged
         {
             get { return _isChanged; }
@@ -82,7 +85,13 @@ namespace CloudWallet.ViewModels
             bf.Serialize(ms, this);
             return ms.ToArray();
         }
-
+        protected byte[] SerializeToXML()
+        {
+            XmlSerializer serializer = new XmlSerializer(this.GetType());
+            MemoryStream ms = new MemoryStream();
+            serializer.Serialize(ms, this);
+            return ms.ToArray();
+        }
 
         //protected static T SerializeFromBinary<T>(byte[] xml)
         //{
@@ -96,11 +105,17 @@ namespace CloudWallet.ViewModels
         //        }
         //    }
         //}
-        protected static T SerializeFromBinary<T>(byte[] bytes) where T : VMBase
+        protected static T DeSerializeFromBinary<T>(byte[] bytes) where T : VMBase
         {
             BinaryFormatter bf = new BinaryFormatter();
             MemoryStream ms = new MemoryStream(bytes);
             return (T)bf.Deserialize(ms);
+        }
+        protected static T DeSerializeFromXML<T>(byte[] bytes) where T : VMBase
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            MemoryStream ms = new MemoryStream(bytes);
+            return (T)serializer.Deserialize(ms);
         }
     }
 }

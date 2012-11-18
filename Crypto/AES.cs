@@ -152,8 +152,12 @@ namespace CloudWallet.Crypto
                         //    //Write all data to the stream. 
                         //    swEncrypt.Write(inputData);
                         //}
-                        foreach (byte b in inputData)
-                            csEncrypt.WriteByte(b);
+
+                        //foreach (byte b in inputData)
+                        //    csEncrypt.WriteByte(b);
+
+                        using (MemoryStream inputDataStream = new MemoryStream(inputData))
+                            inputDataStream.CopyTo(csEncrypt);
                     }
                     outputData = msEncrypt.ToArray();
                 }
@@ -205,14 +209,21 @@ namespace CloudWallet.Crypto
                         //using (StreamReader srDecrypt = new StreamReader(csDecrypt))
                         //    // Read the decrypted bytes from the decrypting stream 
                         //    // and place them in a string. 
-                        //    Convert.FromBase64String(srDecrypt.ReadToEnd());                        
-                        while (true)
+                        //    Convert.FromBase64String(srDecrypt.ReadToEnd());          
+
+                        //while (true)
+                        //{
+                        //    int b = csDecrypt.ReadByte();
+                        //    if (b != -1)
+                        //        outputData.Add((byte)b);
+                        //    else
+                        //        break;
+                        //}
+
+                        using (MemoryStream outputMemoryStream = new MemoryStream())
                         {
-                            int b = csDecrypt.ReadByte();
-                            if (b != -1)
-                                outputData.Add((byte)b);
-                            else
-                                break;
+                            csDecrypt.CopyTo(outputMemoryStream);
+                            return outputMemoryStream.ToArray();
                         }
                     }
                 }
@@ -223,8 +234,6 @@ namespace CloudWallet.Crypto
                 //if (aesAlg != null)
                 //    aesAlg.Clear();
             }
-
-            return outputData.ToArray();
         }
     }
 }
