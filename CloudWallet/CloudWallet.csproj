@@ -68,8 +68,8 @@
     <Compile Include="PasswordDialog.xaml.cs">
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Upload.xaml.cs">
-      <DependentUpon>Upload.xaml</DependentUpon>
+    <Compile Include="EmailData.xaml.cs">
+      <DependentUpon>EmailData.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ItemVM.cs" />
     <Compile Include="ViewModels\VMBase.cs" />
@@ -94,7 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Upload.xaml">
+    <Page Include="EmailData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

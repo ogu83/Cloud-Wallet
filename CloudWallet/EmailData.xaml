@@ -9,12 +9,15 @@
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Upload" HorizontalAlignment="Left" Margin="101,49,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
+        <Button x:Name="Uploadbtn" Content="Send" HorizontalAlignment="Left" Margin="232,71,0,0" VerticalAlignment="Top" Width="76" Height="27" Click="Uploadbtn_Click" RenderTransformOrigin="1.309,-0.315" Grid.ColumnSpan="3"/>
         <TextBox x:Name="UploadFile" Height="29" Margin="10,10,3,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" Text="Wallet / Package Path"/>
-        <Ellipse x:Name="StatsShape" Fill="#FFEC6B6B" Height="29" Margin="24,11,2.925,0" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Ellipse x:Name="StatsShape" Fill="#FFEC6B6B" Height="29" Margin="23,11,4,0" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
         <Rectangle x:Name="OpenFile" Fill="#FFEC6B6B" Height="29" Margin="260,10,0,0" Stroke="Black" VerticalAlignment="Top" RenderTransformOrigin="0.012,1.561" HorizontalAlignment="Left" Width="17" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="URLTextbox" Height="27" Margin="10,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnlyCaretVisible="True" HorizontalAlignment="Left" Width="253" Grid.ColumnSpan="2"/>
-        <Button Content="Copy" Margin="7,106,3.925,0" RenderTransformOrigin="-0.459,-0.743" Grid.ColumnSpan="2" Height="27" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="EmailTo" HorizontalAlignment="Left" Height="25" Margin="58,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.57,0.86"/>
+        <TextBox x:Name="EmailFrom" HorizontalAlignment="Left" Height="27" Margin="58,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="From:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Lbstats" Content="States: " HorizontalAlignment="Left" Margin="12,111,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
 
     </Grid>
 </Window>
