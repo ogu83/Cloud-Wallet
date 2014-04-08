@@ -41,6 +41,11 @@
                 <Separator />
                 <MenuItem x:Name="btnExit" Header="Exit" Click="btnExit_Click_1" />
             </MenuItem>
+            <MenuItem Header="Transfer">
+                <MenuItem Header="E-mail" HorizontalAlignment="Left" Width="149"/>
+                <MenuItem Header="Upload" HorizontalAlignment="Left" Width="149"/>
+                <MenuItem Header="TCP/IP" HorizontalAlignment="Left" Width="149"/>
+            </MenuItem>
             <MenuItem x:Name="btnAbout" Header="About" Click="btnAbout_Click_1"  />
         </Menu>
         <Grid Grid.Row="1">
