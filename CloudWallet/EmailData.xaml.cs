@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Threading;
 
+
 namespace CloudWallet
 {
     /// <summary>
@@ -82,7 +83,7 @@ namespace CloudWallet
                     && BlackListed(EmailTo.Text) == true
                     )
                 {
-                  
+                    Lbstats.Content = "Stats: Please Wait..";
                     Random ExtendedTimeStampForPhpUniqueIDentity = new Random();
                     int TimeStamp = ExtendedTimeStampForPhpUniqueIDentity.Next(11498, 99328);
 
@@ -91,7 +92,7 @@ namespace CloudWallet
 
                     System.Net.WebClient Client = new System.Net.WebClient();
                     Client.Headers.Add("Content-Type", "binary/octet-stream");
-
+                    
                     String ParemURI = "http://fusionservers.x10.mx/CloudWallet/Upload.php?from="+From+"&to="+SendTo+"&RandomInt="+Extended;
                  
                  byte[] result = Client.UploadFile(ParemURI, "POST", UploadFile.Text);
@@ -113,5 +114,22 @@ namespace CloudWallet
             else
                 MessageBox.Show("This is not a valid Cloud Wallet file.");
         }
+
+        private void OpenFolder_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var Folder = new Microsoft.Win32.OpenFileDialog();
+         
+            Folder.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            Folder.Title = "Cloud Wallet - File Transmission";
+            Folder.Filter = "Wallet File (.wlt)|*.wlt|Packaged Wallets (.cw)|*.cw";
+          var Result =  Folder.ShowDialog();
+
+            if(Result.Value == true)
+            { UploadFile.Text  = Folder.FileName; }
+        }
+
+    
+
+       
     }
 }
