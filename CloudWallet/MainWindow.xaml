@@ -37,11 +37,12 @@
                         <Image Source="Images/saveas.png" Height="24" RenderOptions.BitmapScalingMode="Fant" />
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem Header="Package" HorizontalAlignment="Left" Width="149"/>
                 <!--<MenuItem x:Name="btnSaveCloud" Header="Save To Cloud" Click="btnSaveCloud_Click_1" IsEnabled="{Binding IsChanged}" />-->
                 <Separator />
                 <MenuItem x:Name="btnExit" Header="Exit" Click="btnExit_Click_1" />
             </MenuItem>
-            <MenuItem Header="Transfer">
+            <MenuItem Header="Transfer" Click="MenuItem_Click">
                 <MenuItem Header="E-mail" HorizontalAlignment="Left" Width="149"/>
                 <MenuItem Header="Upload" HorizontalAlignment="Left" Width="149"/>
                 <MenuItem Header="TCP/IP" HorizontalAlignment="Left" Width="149"/>

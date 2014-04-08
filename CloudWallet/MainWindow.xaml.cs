@@ -112,5 +112,10 @@ namespace CloudWallet
         {
             (new About()).ShowDialog();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            (new Upload()).ShowDialog();
+        }
     }
 }
