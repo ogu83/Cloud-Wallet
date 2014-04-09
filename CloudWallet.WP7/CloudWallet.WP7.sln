@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudWallet.WP7", "CloudWallet.WP7\CloudWallet.WP7.csproj", "{8F61BADA-3D71-4E23-8939-4806EE45EA5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto.WP7", "Crypto.WP7\Crypto.WP7.csproj", "{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CloudWallet.WP7\\CloudWallet.WP7.csproj
+		SccProjectName1 = CloudWallet.WP7
+		SccLocalPath1 = CloudWallet.WP7
+		SccProjectUniqueName2 = Crypto.WP7\\Crypto.WP7.csproj
+		SccProjectName2 = Crypto.WP7
+		SccLocalPath2 = Crypto.WP7
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F61BADA-3D71-4E23-8939-4806EE45EA5F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
