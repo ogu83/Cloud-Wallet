@@ -26,6 +26,7 @@
         <Label Content="From:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Lbstats" Content="Stats: " HorizontalAlignment="Left" Margin="4,102,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="11"/>
         <Label x:Name="OpenFolder" Content="" Margin="0,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.508,0.651" Grid.Column="2" Height="28" Background="#FFF79404" BorderThickness="2,0,0,0" Cursor="Hand" BorderBrush="#FFEE6565" HorizontalAlignment="Left" Width="12" MouseUp="OpenFolder_MouseUp" />
+        <ProgressBar x:Name="Progressbar1" HorizontalAlignment="Left" Height="7" Margin="8,1,0,0" VerticalAlignment="Top" Width="298" Grid.ColumnSpan="4" DataContextChanged="Progressbar1_DataContextChanged"/>
 
     </Grid>
 </Window>

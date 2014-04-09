@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Net.Http;
 using System.Threading;
 
 
@@ -26,7 +27,9 @@ namespace CloudWallet
         {
             InitializeComponent();
             UploadFile.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" ;
+          
         }
+       
         bool IsValidEmail(string email)
         {
             try
@@ -67,8 +70,37 @@ namespace CloudWallet
                 {
                     Clean = false;
                 }
+                
             }
             return Clean;
+        }
+
+        public  void Setprogress(int evla)
+        {
+            Progressbar1.Value = evla;
+        }
+        public  void UploadProgressCallback(object sender,System.Net . UploadProgressChangedEventArgs e)
+        {
+            // Displays the operation identifier, and the transfer progress.
+
+            Setprogress(e.ProgressPercentage);
+     
+        }
+     
+        private  void UploadProgressComplete(object sender, System.Net.UploadFileCompletedEventArgs e)
+        {
+            // Displays the operation identifier, and the transfer progress.
+            
+            if (System.Text.Encoding.UTF8.GetString(e.Result, 0, e.Result.Length).StartsWith("http://"))
+            {
+                Lbstats.Content = "Stats: Message Sent";
+
+            }
+            else
+            {
+                Lbstats.Content = "Fault -Report to Cloud Wallet: " + System.Text.Encoding.UTF8.GetString(e.Result, 0, e.Result.Length);
+            }
+            
         }
         private void Uploadbtn_Click(object sender, RoutedEventArgs e)
         {
@@ -91,22 +123,21 @@ namespace CloudWallet
                     string Extended = Convert.ToString(TimeStamp);
 
                     System.Net.WebClient Client = new System.Net.WebClient();
-                    Client.Headers.Add("Content-Type", "binary/octet-stream");
+                    Client.UploadProgressChanged += new System.Net.UploadProgressChangedEventHandler(UploadProgressCallback);
+
+                    Client.UploadFileCompleted += new System.Net.UploadFileCompletedEventHandler(UploadProgressComplete);
+                   
+                   
                     
-                    String ParemURI = "http://fusionservers.x10.mx/CloudWallet/Upload.php?from="+From+"&to="+SendTo+"&RandomInt="+Extended;
-                 
-                 byte[] result = Client.UploadFile(ParemURI, "POST", UploadFile.Text);
+                    Uri  ParemURI =new Uri( "http://fusionservers.x10.mx/CloudWallet/Upload.php?from="+From+"&to="+SendTo+"&RandomInt="+Extended);
 
+                   Client.UploadFileAsync(ParemURI, "POST", UploadFile.Text);
 
-                    if( System.Text.Encoding.UTF8.GetString(result, 0, result.Length).StartsWith("http://"))
-                    {
-                       Lbstats.Content = "Stats: File Uploaded, Message Sent";
-
-                    }
-                    else
-                    {
-                        Lbstats.Content = "Fault -Report to Cloud Wallet: " + System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
-                    }
+                  
+                    /*
+                        
+                      */
+                    
                 }
                 else
                     MessageBox.Show("Can not mail to an invalid email");
@@ -126,6 +157,11 @@ namespace CloudWallet
 
             if(Result.Value == true)
             { UploadFile.Text  = Folder.FileName; }
+        }
+
+        private void Progressbar1_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
         }
 
     

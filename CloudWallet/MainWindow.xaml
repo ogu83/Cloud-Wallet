@@ -44,8 +44,10 @@
             </MenuItem>
             <MenuItem Header="Transfer" Click="MenuItem_Click">
                 <MenuItem Header="E-mail" HorizontalAlignment="Left" Width="149" Click="MenuItem_Click_1"/>
-                <MenuItem Header="Upload" HorizontalAlignment="Left" Width="149"/>
+                <MenuItem Header="Upload" HorizontalAlignment="Left" Width="149" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Share" HorizontalAlignment="Left" Width="149"/>
                 <MenuItem Header="TCP/IP" HorizontalAlignment="Left" Width="149"/>
+               
             </MenuItem>
             <MenuItem x:Name="btnAbout" Header="About" Click="btnAbout_Click_1"  />
         </Menu>
