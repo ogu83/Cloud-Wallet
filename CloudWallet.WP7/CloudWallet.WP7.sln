@@ -5,6 +5,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudWallet.WP7", "CloudWal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto.WP7", "Crypto.WP7\Crypto.WP7.csproj", "{3BA03085-AB4A-43AF-B42F-C9FD0F1C6BA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{5780A6AE-5AF4-49C9-A10E-035FDF995D16}"
+	ProjectSection(SolutionItems) = preProject
+		CloudWalletWP7 ScreenShots\001.png = CloudWalletWP7 ScreenShots\001.png
+		CloudWalletWP7 ScreenShots\002.png = CloudWalletWP7 ScreenShots\002.png
+		CloudWalletWP7 ScreenShots\003.png = CloudWalletWP7 ScreenShots\003.png
+		CloudWalletWP7 ScreenShots\004.png = CloudWalletWP7 ScreenShots\004.png
+		CloudWalletWP7 ScreenShots\005.png = CloudWalletWP7 ScreenShots\005.png
+		CloudWalletWP7 ScreenShots\006.png = CloudWalletWP7 ScreenShots\006.png
+		CloudWalletWP7 ScreenShots\007.png = CloudWalletWP7 ScreenShots\007.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 3
