@@ -1,0 +1,36 @@
+﻿<Window x:Class="CloudWallet.About"        
+        xmlns="http://schemas.microsoft.com/netfx/2007/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="300" Width="300"         
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" FontSize="14">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.5*" />
+        </Grid.RowDefinitions>
+        <Image Source="cloudWallet_128x128.png" Margin="3" />
+        <Image Source="http://oguzkoroglu.net/picture_library/dsc04198_fix1.jpg" Margin="3" Grid.Column="1" />
+        <TextBlock Grid.Row="1" x:Name="txtAppName" Text="[ApplicationName]" />
+        <TextBlock Grid.Row="2" x:Name="txtVersion" Text="[Version]" />
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2">
+           <Hyperlink x:Name="txtCompany" NavigateUri="http://oguzkoroglu.net">
+               <Grid>
+                   <Grid.RowDefinitions>
+                       <RowDefinition />
+                       <RowDefinition />
+                   </Grid.RowDefinitions>
+                    <TextBlock Text="Author : Oğuz Köroğlu" />
+                    <TextBlock Text="http://oguzkoroglu.net" Grid.Row="1" />
+               </Grid>
+           </Hyperlink>
+        </TextBlock>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Content="Ok" Margin="3" Width="100" IsDefault="True" IsCancel="True" Click="Button_Click_1"/>
+    </Grid>
+</Window>
