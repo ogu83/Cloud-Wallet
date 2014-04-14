@@ -128,6 +128,14 @@ namespace CloudWallet
             (new QuickUpload()).ShowDialog();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+          ///Make a global settings, chich swaps from .swf to files, so the search knows what to do.......
+          ///only i understand ^^
+          ///l
+          ///once it swaps, the search will alternate... with a <Listt<string>>......
+        }
+
        
         /*private void Textbox1_MouseMove(object sender, MouseEventArgs e)
         {
