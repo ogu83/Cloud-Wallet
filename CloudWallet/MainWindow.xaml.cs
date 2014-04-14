@@ -101,12 +101,24 @@ namespace CloudWallet
 
         private void btnSave_Click_1(object sender, RoutedEventArgs e)
         {
-            _myVM.SaveCommand();
+            if (UsingWallet == true)
+            {
+                _myVM.SaveCommand();
+            }
+            else
+            { }
         }
 
         private void btnSaveAs_Click_1(object sender, RoutedEventArgs e)
         {
-            _myVM.SaveAsCommand();
+            if (UsingWallet == true)
+            {
+                _myVM.SaveAsCommand();
+            }
+            else
+            {
+
+            }
         }
 
         private void btnSaveCloud_Click_1(object sender, RoutedEventArgs e)
@@ -116,11 +128,25 @@ namespace CloudWallet
 
         private void btnDelete_Click_1(object sender, RoutedEventArgs e)
         {
-            _myVM.DeleteCommand();
+            if (UsingWallet == true)
+            {
+                _myVM.DeleteCommand();
+            }
+            else
+            {
+                //delete a file
+            }
         }
         private void btnAdd_Click_1(object sender, RoutedEventArgs e)
         {
-            _myVM.AddCommand();
+            if (UsingWallet == true)
+            {
+                _myVM.AddCommand();
+            }else
+            {
+                //add a file
+
+            }
         }
 
         private void btnAbout_Click_1(object sender, RoutedEventArgs e)
@@ -186,13 +212,25 @@ namespace CloudWallet
         }
 
 
+       public bool ProcessingUnit(string Command){
+           bool success = false;
+           switch (Command.ToLowerInvariant())
+           {
 
-       
-        /*private void Textbox1_MouseMove(object sender, MouseEventArgs e)
-        {
-         
-            string[] Top = Convert.ToString(this.PointToScreen(Mouse.GetPosition(Textbox1))).Replace(" ", "").Split(',');
-               Console.WriteLine(int.Parse (Top[1])-this.Height  );
-        }*/
+
+
+
+
+
+
+
+
+
+
+
+           }
+           return success;
+    }
+      
     }
 }
