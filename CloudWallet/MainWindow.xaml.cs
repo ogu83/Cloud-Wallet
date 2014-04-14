@@ -145,6 +145,7 @@ namespace CloudWallet
             }else
             {
                 //add a file
+                
 
             }
         }
@@ -171,65 +172,86 @@ namespace CloudWallet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-          ///Make a global settings, chich swaps from .swf to files, so the search knows what to do.......
-          ///only i understand ^^
-          ///l
-          ///once it swaps, the search will alternate... with a <Listt<string>>......
-          ///
-            
-            switch(BtnFiles.Content.ToString())
+       
+            switch (BtnFiles.Content.ToString())
             {
 
                 case "F":
-                     UsingWallet = false;
-                BtnFiles.Content = "W";
-                ItemsListB.Visibility = System.Windows.Visibility.Visible;
-                 
-                
-                //Load Filess
-
+                    UsingWallet = false;
+                    BtnFiles.Content = "W";
+                    ItemsListB.Visibility = System.Windows.Visibility.Visible;
                     return;
 
                 case "W":
-                     UsingWallet = true;
-                BtnFiles.Content = "F";
-                ItemsListB.Visibility = System.Windows.Visibility.Hidden;
-                 
-                
-                //Populate with Walletss
-
-
-
-
+                    UsingWallet = true;
+                    BtnFiles.Content = "F";
+                    ItemsListB.Visibility = System.Windows.Visibility.Hidden;
                     return;
 
             }
-
-
-
-
-
         }
 
-
+        /// <summary>
+        /// If the user chooces to add files, it will be completed here....
+        /// 
+        /// commands -- Add file:        --    AD     or        NF
+        /// commands -- Remove file:     --    RF     or        DF
+        /// commands -- Save file:       --    SF     or        ES
+        /// commands -- Save file As:    --    SA     or        FA
+        /// </summary>
+        /// <param name="Command"></param>
+        /// <returns></returns>
        public bool ProcessingUnit(string Command){
-           bool success = false;
+           bool successStats = false;
            switch (Command.ToLowerInvariant())
            {
+               case "ad": //Add file
+               case "nf":
+
+
+
+                   return true;
+
+
+               case "rf": //Remove file
+               case "df":
+
+
+
+
+
+                   return true;
+
+               case "sf": //Save File
+               case "es":
+
+
+
+
+
+                   return true;
+
+               case "sa": //Save File
+               case "fa":
 
 
 
 
 
 
+                   return true;
 
 
+
+               default:
+                   successStats = false;
+                   return true;
 
 
 
 
            }
-           return success;
+           return successStats;
     }
       
     }
