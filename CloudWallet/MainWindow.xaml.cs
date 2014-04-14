@@ -156,7 +156,7 @@ namespace CloudWallet
                 case "F":
                      UsingWallet = false;
                 BtnFiles.Content = "W";
-
+                    
                     //Load Wallaets
 
 
