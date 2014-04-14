@@ -210,7 +210,7 @@ namespace CloudWallet
 
 
 
-                   return true;
+                   return successStats;
 
 
                case "rf": //Remove file
@@ -220,7 +220,7 @@ namespace CloudWallet
 
 
 
-                   return true;
+                   return successStats;
 
                case "sf": //Save File
                case "es":
@@ -229,7 +229,7 @@ namespace CloudWallet
 
 
 
-                   return true;
+                   return successStats;
 
                case "sa": //Save File
                case "fa":
@@ -239,19 +239,15 @@ namespace CloudWallet
 
 
 
-                   return true;
-
-
-
+                   return successStats;
                default:
-                   successStats = false;
-                   return true;
+                   return false;
 
 
 
 
            }
-           return successStats;
+        
     }
       
     }
