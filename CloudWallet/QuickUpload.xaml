@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CloudWallet.QuickUpload"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Cloud Wallet - Quick Upload" Height="111" Width="321" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Background="#FFDE7730">
+        Title="Cloud Wallet - Quick Upload" Height="111" Width="321" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Background="Chocolate">
     <Grid Margin="0,0,0,187">
         <Button x:Name="Uploadbtn" Content="Copy" HorizontalAlignment="Left" Margin="226,44,0,-69" VerticalAlignment="Top" Width="41" Height="25" Click="Uploadbtn_Click" RenderTransformOrigin="1.309,-0.315"/>
         <TextBox x:Name="UploadFile" Height="29" Margin="4,10,0,-39" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" Text="Wallet / Package Path" FontFamily="Consolas" FontSize="18" MaxLines="200" MaxLength="150" HorizontalAlignment="Left" Width="248"/>

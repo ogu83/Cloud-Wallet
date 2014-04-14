@@ -99,6 +99,7 @@ namespace CloudWallet.ViewModels
                 NotifyPropertyChanged("Title");
             }
         }
+
         public string Title
         {
             get
@@ -241,6 +242,24 @@ namespace CloudWallet.ViewModels
             else
                 return false;
         }
+       /* public void Switch(char Type)
+        {
+            switch(Type.ToString ().ToLowerInvariant())
+            {
+                case "w":
+                 
+        
+                    return;
+                case "f":
+                   
+
+
+                    return;
+
+            }
+
+      
+        }*/
 
         internal static WalletVM OpenCommand()
         {

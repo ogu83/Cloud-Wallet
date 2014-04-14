@@ -150,25 +150,27 @@ namespace CloudWallet
           ///l
           ///once it swaps, the search will alternate... with a <Listt<string>>......
           ///
+            
             switch(BtnFiles.Content.ToString())
             {
 
                 case "F":
                      UsingWallet = false;
                 BtnFiles.Content = "W";
-                    
-                    //Load Wallaets
-
-
+                ItemsListB.Visibility = System.Windows.Visibility.Visible;
+                 
+                
+                //Load Filess
 
                     return;
-
 
                 case "W":
                      UsingWallet = true;
                 BtnFiles.Content = "F";
-
-                    //Populate with Files
+                ItemsListB.Visibility = System.Windows.Visibility.Hidden;
+                 
+                
+                //Populate with Walletss
 
 
 

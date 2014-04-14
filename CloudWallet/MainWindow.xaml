@@ -71,6 +71,9 @@
                             </Grid.RowDefinitions>
                             <TextBox Margin="3" FontSize="12" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                             <ListBox Grid.Row="1" Margin="5" DisplayMemberPath="Title" ItemsSource="{Binding FilteredItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Background="Transparent" BorderBrush="Transparent" />
+                            <ListBox x:Name="ItemsListB" Margin="5,3,3,4" HorizontalContentAlignment="Stretch" Grid.Row="1" Background="Chocolate" BorderThickness="0" Visibility="Hidden"/>
+
+
                         </Grid>
                     </Border>
                     <Button x:Name="BtnFiles" Content="F" Margin="0,4,3,4" Grid.Row="1" HorizontalAlignment="Right" Width="45" Click="Button_Click"/>
