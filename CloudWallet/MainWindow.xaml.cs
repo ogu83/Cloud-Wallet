@@ -29,6 +29,21 @@ namespace CloudWallet
             this.DataContext = _myVM;
         }
 
+
+
+
+
+
+        public bool UsingWallet = true;
+
+
+
+
+
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
