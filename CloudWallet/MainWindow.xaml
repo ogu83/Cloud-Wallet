@@ -73,7 +73,7 @@
                             <ListBox Grid.Row="1" Margin="5" DisplayMemberPath="Title" ItemsSource="{Binding FilteredItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Background="Transparent" BorderBrush="Transparent" />
                         </Grid>
                     </Border>
-                    <Button Content="Files" Margin="0,4,3,4" Grid.Row="1" HorizontalAlignment="Right" Width="45" Click="Button_Click"/>
+                    <Button x:Name="BtnFiles" Content="F" Margin="0,4,3,4" Grid.Row="1" HorizontalAlignment="Right" Width="45" Click="Button_Click"/>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1" IsEnabled="{Binding IsAnyItemSelected}">

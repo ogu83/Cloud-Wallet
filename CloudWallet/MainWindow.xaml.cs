@@ -149,7 +149,41 @@ namespace CloudWallet
           ///only i understand ^^
           ///l
           ///once it swaps, the search will alternate... with a <Listt<string>>......
+          ///
+            switch(BtnFiles.Content.ToString())
+            {
+
+                case "F":
+                     UsingWallet = false;
+                BtnFiles.Content = "W";
+
+                    //Load Wallaets
+
+
+
+                    return;
+
+
+                case "W":
+                     UsingWallet = true;
+                BtnFiles.Content = "F";
+
+                    //Populate with Files
+
+
+
+
+                    return;
+
+            }
+
+
+
+
+
         }
+
+
 
        
         /*private void Textbox1_MouseMove(object sender, MouseEventArgs e)
