@@ -45,9 +45,7 @@
             <MenuItem Header="Transfer" Click="MenuItem_Click">
                 <MenuItem Header="E-mail" HorizontalAlignment="Left" Width="149" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Upload" HorizontalAlignment="Left" Width="149" Click="MenuItem_Click_2"/>
-                <MenuItem Header="Share" HorizontalAlignment="Left" Width="149"/>
-                <MenuItem Header="TCP/IP" HorizontalAlignment="Left" Width="149"/>
-               
+
             </MenuItem>
             <MenuItem x:Name="btnAbout" Header="About" Click="btnAbout_Click_1"  />
         </Menu>
@@ -64,7 +62,7 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Row="0" Margin="3" Click="btnAdd_Click_1" />
-                    <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Row="1" Margin="3" IsEnabled="{Binding IsAnyItemSelected}" Click="btnDelete_Click_1" />
+                    <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Row="1" Margin="3,3,53,3" IsEnabled="{Binding IsAnyItemSelected}" Click="btnDelete_Click_1" />
                     <Border Grid.Row="2" Margin="3" Background="Chocolate" CornerRadius="3">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -75,6 +73,7 @@
                             <ListBox Grid.Row="1" Margin="5" DisplayMemberPath="Title" ItemsSource="{Binding FilteredItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Background="Transparent" BorderBrush="Transparent" />
                         </Grid>
                     </Border>
+                    <Button Content="Files" Margin="0,4,3,4" Grid.Row="1" HorizontalAlignment="Right" Width="45"/>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1" IsEnabled="{Binding IsAnyItemSelected}">
@@ -92,7 +91,7 @@
                         <Label Grid.Row="0" Grid.Column="0" Content="Title" VerticalContentAlignment="Center"/>
                         <Label Grid.Row="1" Grid.Column="0" Content="Content" VerticalContentAlignment="Center"/>
                         <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding SelectedItem.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" FontWeight="Bold" />
-                        <TextBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Text="{Binding SelectedItem.Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" FontWeight="Normal" AcceptsReturn="True" />
+                        <TextBox  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Text="{Binding SelectedItem.Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" FontWeight="Normal" AcceptsReturn="True" />
                     </Grid>
                 </Border>
             </Grid>

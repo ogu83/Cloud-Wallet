@@ -127,5 +127,13 @@ namespace CloudWallet
         {
             (new QuickUpload()).ShowDialog();
         }
+
+       
+        /*private void Textbox1_MouseMove(object sender, MouseEventArgs e)
+        {
+         
+            string[] Top = Convert.ToString(this.PointToScreen(Mouse.GetPosition(Textbox1))).Replace(" ", "").Split(',');
+               Console.WriteLine(int.Parse (Top[1])-this.Height  );
+        }*/
     }
 }

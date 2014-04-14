@@ -54,8 +54,8 @@ namespace CloudWallet
             Folder.Filter = "Wallet File (.wlt)|*.wlt|Packaged Wallets (.cw)|*.cw";
             var Result = Folder.ShowDialog();
 
-            if (Result.Value == true)
-            { UploadFile.Text = Folder.FileName; }
+          
+            UploadFile.Text = Result.Value == true ? Folder.FileName :"";
         }
 
         public void Setprogress(int evla)

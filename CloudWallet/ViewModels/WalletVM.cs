@@ -201,7 +201,7 @@ namespace CloudWallet.ViewModels
         {
             if (IsChanged)
             {
-                switch (MessageBox.Show("Dou you want to save changes before close", "Close File", MessageBoxButton.YesNoCancel))
+                switch (MessageBox.Show("Do you want to save changes before exit", "Close File", MessageBoxButton.YesNoCancel))
                 {
                     case MessageBoxResult.Yes:
                         return SaveCommand();
