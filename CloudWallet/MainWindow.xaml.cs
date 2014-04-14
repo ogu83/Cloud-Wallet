@@ -30,19 +30,8 @@ namespace CloudWallet
         }
 
 
-
-
-
-
         public bool UsingWallet = true;
-
-
-
-
-
-
-
-
+       public string Temp = "";
 
         public MainWindow()
         {
@@ -106,7 +95,7 @@ namespace CloudWallet
                 _myVM.SaveCommand();
             }
             else
-            { }
+            { ProcessingUnit("SF"); }
         }
 
         private void btnSaveAs_Click_1(object sender, RoutedEventArgs e)
@@ -117,7 +106,7 @@ namespace CloudWallet
             }
             else
             {
-
+                ProcessingUnit("SA");
             }
         }
 
@@ -135,6 +124,7 @@ namespace CloudWallet
             else
             {
                 //delete a file
+                ProcessingUnit("RF");
             }
         }
         private void btnAdd_Click_1(object sender, RoutedEventArgs e)
@@ -145,6 +135,7 @@ namespace CloudWallet
             }else
             {
                 //add a file
+                ProcessingUnit("AD");
                 
 
             }
@@ -169,7 +160,7 @@ namespace CloudWallet
         {
             (new QuickUpload()).ShowDialog();
         }
-
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
        
@@ -180,12 +171,18 @@ namespace CloudWallet
                     UsingWallet = false;
                     BtnFiles.Content = "W";
                     ItemsListB.Visibility = System.Windows.Visibility.Visible;
+                    Temp = LargTb.Text;
+                    LargTb.Text = "";
+                    LargTb.IsReadOnly = true;
                     return;
 
                 case "W":
                     UsingWallet = true;
                     BtnFiles.Content = "F";
                     ItemsListB.Visibility = System.Windows.Visibility.Hidden;
+                    LargTb.IsReadOnly = false;
+                    LargTb.Text = Temp;
+                    Temp = "";
                     return;
 
             }
@@ -201,13 +198,16 @@ namespace CloudWallet
         /// </summary>
         /// <param name="Command"></param>
         /// <returns></returns>
-       public bool ProcessingUnit(string Command){
+
+        List<string> Files = new List<string>();
+        public bool ProcessingUnit(string Command){
            bool successStats = false;
            switch (Command.ToLowerInvariant())
            {
                case "ad": //Add file
                case "nf":
 
+                   ItemsListB.Items.Add("New File");
 
 
                    return successStats;

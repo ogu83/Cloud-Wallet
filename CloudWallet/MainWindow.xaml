@@ -94,7 +94,7 @@
                         <Label Grid.Row="0" Grid.Column="0" Content="Title" VerticalContentAlignment="Center"/>
                         <Label Grid.Row="1" Grid.Column="0" Content="Content" VerticalContentAlignment="Center"/>
                         <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding SelectedItem.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" FontWeight="Bold" />
-                        <TextBox  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Text="{Binding SelectedItem.Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" FontWeight="Normal" AcceptsReturn="True" />
+                        <TextBox x:Name="LargTb"  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Text="{Binding SelectedItem.Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" FontWeight="Normal" AcceptsReturn="True" />
                     </Grid>
                 </Border>
             </Grid>
